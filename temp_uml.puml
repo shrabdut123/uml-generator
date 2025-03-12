@@ -1,0 +1,12 @@
+@startuml
+left to right direction
+retrieveUserProfile --> generateUserProfileUrl : (userId: TSStringKeyword, requestId: TSStringKeyword) : CallExpression
+retrieveUserProfile --> fetchUserProfileData : (userId: TSStringKeyword, requestId: TSStringKeyword) : CallExpression
+retrieveUserProfile --> transformUserProfileResponse : (userId: TSStringKeyword, requestId: TSStringKeyword) : CallExpression
+updateUserProfile --> generateUserProfileUrl : (userId: TSStringKeyword, updateInput: TSTypeReference, requestId: TSStringKeyword) : CallExpression
+updateUserProfile --> transformUserProfileResponse : (userId: TSStringKeyword, updateInput: TSTypeReference, requestId: TSStringKeyword) : CallExpression
+updateUserProfile --> handleUserProfileError : (userId: TSStringKeyword, updateInput: TSTypeReference, requestId: TSStringKeyword) : CallExpression
+loadUserProfiles --> retrieveUserProfile : (inputs: TSArrayType) : unknown
+updateUserProfiles --> updateUserProfile : (userId: TSStringKeyword, updateInput: TSTypeReference, context: TSAnyKeyword) : CallExpression
+fetchUserProfileData --> handleUserProfileError : (userId: TSStringKeyword, url: TSStringKeyword, requestId: TSStringKeyword) : Identifier
+@enduml
