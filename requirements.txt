@@ -1,5 +1,5 @@
 openai
 networkx
 matplotlib
-execjs
+PyExecJS
 azure-identity
